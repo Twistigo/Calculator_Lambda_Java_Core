@@ -4,9 +4,6 @@ import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 
 public class Calculator {
-    static interface Supplier<T> {
-        T get();
-    }
     static Supplier<Calculator> instance = Calculator::new;
     BinaryOperator<Integer> plus = (x, y) -> x + y;
     BinaryOperator<Integer> minus = (x, y) -> x - y;
@@ -16,4 +13,8 @@ public class Calculator {
     UnaryOperator<Integer> abs = x -> x > 0 ? x : x * -1;
     Predicate<Integer> isPositive = x -> x > 0;
     Consumer<Integer> println = System.out::println;
+    static interface Supplier<T> {
+        T get();
+    }
+
 }
